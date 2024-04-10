@@ -58,3 +58,55 @@ arr13= np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
 print('from second to 1to4',arr13[1,1:4])
 print('2 from both',arr13[0:2,2])
 print('from both 1to 4',arr13[0:2,1:4])
+#data type
+'''i - integer
+b - boolean
+u - unsigned integer
+f - float
+c - complex float
+m - timedelta
+M - datetime
+O - object
+S - string
+U - unicode string
+V - fixed chunk of memory for other type ( void )'''
+arr14 = np.array([1, 2, 3, 4])
+print(arr14.dtype)
+arr15= np.array(['apple', 'banana', 'cherry'])
+print(arr15.dtype)
+#define datatype
+arr16=np.array([1,2,3,4],dtype='S')
+print(arr16)
+print(arr16.dtype)
+#with 4 byte integer
+arr17=np.array([1,2,3,4],dtype='i4')
+print(arr17)
+print(arr17.dtype)
+#error
+# arr18= np.array(['a', '2', '3'], dtype='i')
+# print(arr18)
+#change datatype
+arr19 = np.array([1.1, 2.1, 3.1])
+newarr = arr19.astype('i')
+print(newarr)
+print(newarr.dtype)
+#copying
+arr20= np.array([1, 2, 3, 4, 5])
+x = arr20.copy()
+arr20[0] = 42
+print(arr20)
+print(x)
+#viewing
+arr21= np.array([1, 2, 3, 4, 5])
+y= arr21.view()
+arr21[0] = 42
+y[1]=41
+print(arr21)
+print(y)
+#check Array owns its data
+arr22= np.array([1, 2, 3, 4, 5])
+q= arr22.copy()
+p = arr22.view()
+print(arr22.base)
+print(q.base)
+print(p.base)
