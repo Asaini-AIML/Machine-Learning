@@ -110,3 +110,32 @@ p = arr22.view()
 print(arr22.base)
 print(q.base)
 print(p.base)
+#SHAPE-----------
+arr23 = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+
+print(arr23.shape)
+arr24 = np.array([1, 2, 3, 4], ndmin=5)
+print(arr24)
+print('shape of array :', arr24.shape)
+#NumPy Array Reshaping--------
+#1D-2D
+arr25= np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+newarr25=arr25.reshape(4,3)
+print(newarr25)
+#1d-3d
+newarr25_1= arr25.reshape(2, 3, 2)
+
+print(newarr25_1)
+#Returns Copy or View?
+arr26= np.array([1, 2, 3, 4, 5, 6, 7, 8])
+print(arr26.reshape(2, 4).base)
+#Unknown Dimension
+arr27= np.array([1, 2, 3, 4, 5, 6, 7, 8])
+newarr27 = arr27.reshape(2, 2, -1)
+print(newarr27)
+#Flattening the arrays
+#Flattening array means converting a multidimensional array into a 1D array.
+arr28= np.array([[1, 2, 3], [4, 5, 6]])
+newarr28 = arr28.reshape(-1)
+print(newarr28)
+#NumPy Array Iterating----------------
