@@ -139,3 +139,81 @@ arr28= np.array([[1, 2, 3], [4, 5, 6]])
 newarr28 = arr28.reshape(-1)
 print(newarr28)
 #NumPy Array Iterating----------------
+#1-D
+arr29 = np.array([1, 2, 3])
+for x in arr29:
+  print(x)
+print("*")
+#2-D
+arr30 = np.array([[1, 2, 3], [4, 5, 6]])
+for x in arr:
+  print(x)
+print("*")
+#n-D
+arr31 = np.array([[1, 2, 3], [4, 5, 6]])
+for x in arr31:
+  for y in x:
+    print(y)
+#3-D
+arr32= np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+for x in arr32:
+  print(x)
+for x in arr32:
+  for y in x:
+    for z in y:
+      print(z)
+#Iterating Arrays Using nditer()
+for x in np.nditer(arr32):
+  print(x)
+#Iterating Array With Different Data Types
+for x in np.nditer(arr29, flags=['buffered'], op_dtypes=['S']):
+  print(x)
+#Iterating With Different Step Size
+for x in np.nditer(arr30[:, ::2]):
+  print(x)
+#Enumerated Iteration Using ndenumerate()
+arr33 = np.array([1, 2, 3])
+for idx, x in np.ndenumerate(arr33):
+  print(idx, x)
+arr34 = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+for idx, x in np.ndenumerate(arr34):
+  print(idx, x)
+#NumPy Joining Array---------
+#1-D
+arr35_0 = np.array([1, 2, 3])
+arr35_1 = np.array([4, 5, 6])
+arr35_r = np.concatenate((arr35_0, arr35_1))
+print(arr35_r)
+#2-D
+arr36_0 = np.array([[1, 2], [3, 4]])
+arr36_1= np.array([[5, 6], [7, 8]])
+arr36_r= np.concatenate((arr36_0, arr36_1), axis=1)
+print(arr36_r)
+#Joining Arrays Using Stack Functions
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+arr = np.stack((arr1, arr2), axis=1)
+print(arr)
+#Stacking Along Rows
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+arr = np.hstack((arr1, arr2))
+print(arr)
+#Stacking Along Columns
+arr = np.vstack((arr1, arr2))
+print(arr)
+#Stacking Along Height (depth)
+arr = np.dstack((arr1, arr2))
+print(arr)
+#NumPy Splitting Array----
+arr = np.array([1, 2, 3, 4, 5, 6])
+newarr = np.array_split(arr, 6)
+print(newarr)
+#Splitting 2-D Arrays
+arr = np.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]])
+newarr = np.array_split(arr, 4)
+print(newarr)
+#2-D arrays along rows.
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]])
+newarr = np.array_split(arr, 3, axis=1)
+print(newarr)
